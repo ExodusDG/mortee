@@ -1978,6 +1978,23 @@ footer {
 }
 
 @media (max-width: 490px) {
+    .card__mask {
+        width: 180px;
+        height: 180px;
+    }
+    .header__card_img {
+        border-radius: 25px;
+        z-index: 3;
+        width: 180px;
+    }
+    .header__card_title {
+        font-size: 26px;
+        font-weight: 700;
+    }
+    .header__card_desc {
+        font-size: 16px;
+        margin-top: 5px;
+    }
     .mobile_nav {
         position: relative;
         width: 100%;
@@ -1996,17 +2013,17 @@ footer {
         margin: 0 auto;
         margin-bottom: 100px;
     }
-    .header {
-        height: 1800px;
-        background-size: contain;
-    }
     .header__slider_image img {
-        height: 1800px;
+        height: 100vh;
         width: 100vw;
         object-fit: cover;
     }
     .header__slider_mask {
-        height: 1800px;
+        height: 100vh;
+    }
+    .header {
+        height: 100vh;
+        background-size: contain;
     }
     .services__cards>div {
         width: 50%;
@@ -2017,9 +2034,68 @@ footer {
         display: block;
         left: 0;
     }
+    .about__image {
+        width: 60%;
+        margin: 0 auto;
+    }
+    .about__image {
+        height: 300px;
+    }
     .services {
         height: auto;
         padding-bottom: 950px;
+    }
+    .services__card>img {
+        border-radius: 25px;
+        position: absolute;
+        width: 190px;
+    }
+    .services__card_text {
+        left: 0%;
+        width: 100%;
+        position: absolute;
+        top: 100px;
+        z-index: 5;
+        text-align: center;
+    }
+    .ticket {
+        padding-top: 0px;
+    }
+    .services {
+        height: auto;
+        padding-bottom: 0px;
+    }
+    .services__card_desc {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    .contact__subtitle {
+        width: 90%;
+    }
+    .services__card_title {
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .services__card-mask {
+        width: 190px;
+        height: 190px;
+    }
+    .portfolio-text {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .portfolio {
+        height: 700px;
+    }
+    .services__cards>div {
+        width: 190px;
+        height: 190px !important;
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+    .services__cards {
+        display: flex;
+        left: 0;
     }
     .mobile__menu {
         width: 75vw;
@@ -2228,6 +2304,76 @@ footer {
     .portfolio-cards {
         left: 2vw;
     }
+    .card__mask {
+        width: 160px;
+        height: 160px;
+    }
+    .header__card_img {
+        border-radius: 25px;
+        z-index: 3;
+        width: 160px;
+    }
+    .card__shapes {
+        position: absolute;
+        z-index: 5;
+        width: 60px;
+        left: 20px;
+        top: -45px;
+        transition-timing-function: cubic-bezier(1, 0.01, 0.31, 0.98);
+        transition: 0.4s;
+    }
+    .card__icon {
+        position: absolute;
+        z-index: 5;
+        left: 30px;
+        top: -20px;
+        width: 40px;
+    }
+    .services__cards {
+        height: 900px;
+    }
+    .header__cards {
+        margin: 0 auto;
+        width: 95%;
+        right: 1%;
+        margin-top: 100px;
+        position: relative;
+    }
+    .services__cards {
+        display: flex;
+        left: 2%;
+    }
+    .services__card_text {
+        left: 0%;
+        width: 90%;
+        position: absolute;
+        top: 100px;
+        z-index: 5;
+        text-align: center;
+    }
+    .services__card-mask {
+        width: 170px;
+        height: 170px;
+    }
+    .services__card>img {
+        border-radius: 25px;
+        position: absolute;
+        width: 170px;
+    }
+    .services__icon {
+        position: absolute;
+        top: 45px;
+        left: 15px;
+        width: 40px;
+        z-index: 6;
+    }
+    .services__shape {
+        transition-timing-function: cubic-bezier(1, 0.01, 0.31, 0.98);
+        transition: 0.6s;
+        width: 70px;
+        top: 10px;
+        position: relative;
+    }
 }
 
 @media (max-width: 375px) {
@@ -2278,5 +2424,23 @@ footer {
     .ticket__body_step-2 {
         width: 100%;
         max-width: 340px;
+    }
+    .about__image {
+        height: 300px;
+    }
+    .about__content {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 50px;
+        display: block;
+    }
+    .services__cards {
+        display: flex;
+        left: 0%;
+    }
+    .services__cards>div {
+        width: 170px;
+        height: 170px !important;
+        margin: 0 auto;
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mortee - ваш выбор в IT индустрии</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
                 <a href="#services">Услуги</a>
             </li>
             <li>
-                <a href="#ticket">Создать заявку</a>
+                <a href="#ticket">Подать заявку</a>
             </li>
             <li>
                 <a href="#portfolio">Портфолио</a>
@@ -60,7 +60,7 @@
                     <img src="images/slider/slide-web.jpg" alt="slide">
                     <img src="images/slider/slide__game.png" alt="slide">
                     <img src="images/slider/slide-soft.jpg" alt="slide">
-                    <img src="images/slider/slide__game.png" alt="slide">
+                    <img src="images/slider/slide__mobile.png" alt="slide">
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                     </a>
                     <a href="#ticket">
                         <li>
-                            <span class="nav__item_text">Создать заявку</span>
+                            <span class="nav__item_text">Подать заявку</span>
                             <hr class="nav__item_hoverline">
                         </li>
                     </a>
@@ -293,7 +293,7 @@
                     </div>
                 </div>
                 <div class="services__cards">
-                    <div class="services__card">
+                    <div class="services__card" id="web_card">
                         <div class="services__card_text">
                             <p class="services__card_title">WEB</p>
                             <p class="services__card_desc">разработка</p>
@@ -305,7 +305,7 @@
                         <img src="images/cards/card__web.png" alt="Web">
                         <div class="services__card-mask"></div>
                     </div>
-                    <div class="services__card">
+                    <div class="services__card" id="game_card">
                         <div class="services__card_text">
                             <p class="services__card_title">GAME</p>
                             <p class="services__card_desc">develop</p>
@@ -317,7 +317,7 @@
                         <img src="images/cards/card_game.png" alt="Web">
                         <div class="services__card-mask"></div>
                     </div>
-                    <div class="services__card">
+                    <div class="services__card" id="seo_card">
                         <div class="services__card_text">
                             <p class="services__card_title">SEO</p>
                             <p class="services__card_desc">оптимизация</p>
@@ -329,7 +329,7 @@
                         <img src="images/cards/card_seo.png" alt="Web">
                         <div class="services__card-mask"></div>
                     </div>
-                    <div class="services__card">
+                    <div class="services__card" id="soft_card">
                         <div class="services__card_text">
                             <p class="services__card_title">ПО</p>
                             <p class="services__card_desc">разработка</p>
@@ -341,7 +341,7 @@
                         <img src="images/cards/card_soft.png" alt="Web">
                         <div class="services__card-mask"></div>
                     </div>
-                    <div class="services__card">
+                    <div class="services__card" id="mobile_card">
                         <div class="services__card_text">
                             <p class="services__card_title">MOBILE</p>
                             <p class="services__card_desc">develop</p>
@@ -353,7 +353,7 @@
                         <img src="images/cards/card_mobile.png" alt="Web">
                         <div class="services__card-mask"></div>
                     </div>
-                    <div class="services__card">
+                    <div class="services__card" id="another_card">
                         <div class="services__card_text">
                             <p class="services__card_title">ПРОЧЕЕ</p>
                             <p class="services__card_desc">уникальный</p>
@@ -375,7 +375,7 @@
             <div class="section__title" style="width: 40%;">
                 <div class="section__title_wrapper">
                     <div class="section__title_number">04</div>
-                    <div class="section__title_text">Создать заявку</div>
+                    <div class="section__title_text">Подать заявку</div>
                 </div>
             </div>
             <div class="ticket__body">
@@ -512,7 +512,7 @@
                             <p class="ticket__body_step">ШАГ 2. Опишите ваш проект</p>
                             <div class="ticket__desc-1">
                                 <div class="ticket__desc_block">
-                                    <p style="margin-bottom: 30px;"><span>Категория:</span> Web - разработка</p>
+                                    <p style="margin-bottom: 30px;"><span>Категория:</span> <span id="category"> Web - разработка</span></p>
                                     <div class="ticket__desc_input">
                                         <p>Название компании</p>
                                         <input type="text" name="company" id="#company-name">
@@ -886,7 +886,7 @@
                             <div>
                                 <a href="#">> Главная</a>
                                 <a href="#">> О нас</a>
-                                <a href="#">> Создать заявку</a>
+                                <a href="#">> Подать заявку</a>
                             </div>
                             <div>
                                 <a href="#">> Услуги</a>

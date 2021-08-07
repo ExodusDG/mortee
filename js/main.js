@@ -281,7 +281,32 @@ $('.burger__button').click(function() {
 $('.button-close').click(function() {
     $('.mobile__menu').css('left', '100vw');
 })
+$(".services__card").click(function() {
+    $('.ticket__body_wrapper').attr('style', 'transform: translateX(' + TickettranslateWidth + 'px)');
+    $('.ticket').attr('style', 'height: auto !important')
 
+    var currentServ = $(this).attr('id');
+    console.log(currentServ)
+
+    if (currentServ == 'web_card') {
+        $('#category').text('Web - разработка');
+    } else if (currentServ == 'game_card') {
+        $('#category').text('Game - develop');
+    } else if (currentServ == 'seo_card') {
+        $('#category').text('SEO - оптимизация');
+    } else if (currentServ == 'soft_card') {
+        $('#category').text('Разработка ПО');
+    } else if (currentServ == 'mobile_card') {
+        $('#category').text('Mobile develop');
+    } else if (currentServ == 'another_card') {
+        $('#category').text('Прочее');
+    }
+
+
+    $('html, body').animate({
+        scrollTop: $("#ticket").offset().top
+    }, 800);
+});
 
 /* HEADER SLIDER */
 var currentSlide = 1;
