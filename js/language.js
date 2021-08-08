@@ -1,5 +1,5 @@
 var lang = navigator.languages
-
+console.log(navigator.languages)
 if (lang.indexOf('ru')) {
     //
 } else {
