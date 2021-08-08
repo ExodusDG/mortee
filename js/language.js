@@ -15,8 +15,8 @@ function browserLocale() {
     return lang
 }
 
-if (browserLocale().indexOf('ru') !== -1) {
-    //
+if (browserLocale().indexOf('ru') == -1) {
+    alert('1')
 } else {
     engLang()
 }
