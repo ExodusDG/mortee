@@ -1,5 +1,63 @@
 var bodyWidth = $('body').width();
 
+/* PRELOADER */
+
+setTimeout(preLoader, 1500);
+
+function preLoader() {
+    setTimeout(loadingHide(), 1000);
+
+    function loadingHide() {
+        $('.loader').css('display', 'none')
+    }
+    $('.preloader__left').addClass('preloader__left_hidden');
+    $('.preloader__right').addClass('preloader__right_hidden');
+
+    window.setTimeout(function() {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+    }, 1000);
+}
+
+/* TOP BUTTON */
+
+var progressValue = document.querySelector('.progress');
+var RADIUS = 50;
+var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+function progress(value) {
+    var progress = value / 100;
+    var dashoffset = CIRCUMFERENCE * (1 - progress);
+    progressValue.style.strokeDashoffset = dashoffset;
+}
+progressValue.style.strokeDasharray = CIRCUMFERENCE;
+var pageHeight = $(document).outerHeight(true);
+
+$(window).on('scroll', function() {
+    var distanceScrolled = $(window).scrollTop();
+    var scrollPercent = (distanceScrolled * 100) / pageHeight;
+    progress(scrollPercent);
+});
+
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on('resize scroll', function() {
+    if ($('.header').isInViewport()) {
+        $('.scroll_up').removeClass('scroll_up_visible');
+    } else {
+        $('.scroll_up').addClass('scroll_up_visible');
+    }
+});
+
+/* END */
 
 if (bodyWidth < 951 && bodyWidth > 769) {
     $('.section__title').attr('style', 'width:50%');
@@ -7,17 +65,26 @@ if (bodyWidth < 951 && bodyWidth > 769) {
 } else if (bodyWidth < 768) {
     $('.section__title').attr('style', 'width:80%');
 }
+/* TOP BUTTON */
 
+var progressValue = document.querySelector('.progress');
+var RADIUS = 50;
+var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
-$(window).on('resize scroll', function() {
-    if ($('.header').isInViewport()) {
-        $('.navigation').removeClass('menu-fixed')
-        $('.logotype__block').css('bottom', '10px')
-    } else {
-        $('.navigation').addClass('menu-fixed')
-        $('.logotype__block').css('bottom', '15px')
-    }
+function progress(value) {
+    var progress = value / 100;
+    var dashoffset = CIRCUMFERENCE * (1 - progress);
+    progressValue.style.strokeDashoffset = dashoffset;
+}
+progressValue.style.strokeDasharray = CIRCUMFERENCE;
+var pageHeight = $(document).outerHeight(true);
+
+$(window).on('scroll', function() {
+    var distanceScrolled = $(window).scrollTop();
+    var scrollPercent = (distanceScrolled * 100) / pageHeight;
+    progress(scrollPercent);
 });
+
 
 
 /* FAQ SPOILER */
@@ -222,15 +289,6 @@ $(window).scroll(function() {
 
 /* NAVIGATION BAR */
 
-$.fn.isInViewport = function() {
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
-
-    var viewportTop = $(window).scrollTop() + 200;
-    var viewportBottom = viewportTop + $(window).height();
-
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-};
 
 $(window).on('resize scroll', function() {
     function navBarHide() {
@@ -345,13 +403,10 @@ var translateWidth = (100 * (currentSlide - 1)) * -1;
 
 function webActive() {
     slideWrapper.attr('style', 'transform: translateX(0vw');
-    var currentCardRotate = $('.number_1').find('.card__shapes').attr('style')
 
-    if (currentCardRotate == 'transform: rotate(180deg);') {
-        $('.number_1').find('.card__shapes').attr('style', 'transform: rotate(0deg);')
-    } else {
-        $('.number_1').find('.card__shapes').attr('style', 'transform: rotate(180deg);')
-    }
+    $('.card__shapes').removeClass('shape__active')
+    $('.number_1').find('.card__shapes').addClass('shape__active')
+
     $('.header__card_line').attr('style', 'width: 0%');
     $('.number_1').find('.header__card_line').attr('style', 'width: 100%;')
 }
@@ -359,39 +414,33 @@ function webActive() {
 
 function gameActive() {
     slideWrapper.attr('style', 'transform: translateX(-100vw');
-    var currentCardRotate = $('.number_2').find('.card__shapes').attr('style')
 
-    if (currentCardRotate == 'transform: rotate(180deg);') {
-        $('.number_2').find('.card__shapes').attr('style', 'transform: rotate(0deg);')
-    } else {
-        $('.number_2').find('.card__shapes').attr('style', 'transform: rotate(180deg);')
-    }
+    $('.card__shapes').removeClass('shape__active')
+    $('.number_2').find('.card__shapes').addClass('shape__active')
+
+
     $('.header__card_line').attr('style', 'width: 0%');
     $('.number_2').find('.header__card_line').attr('style', 'width: 100%;')
 }
 
 function softActive() {
     slideWrapper.attr('style', 'transform: translateX(-200vw');
-    var currentCardRotate = $('.number_3').find('.card__shapes').attr('style')
 
-    if (currentCardRotate == 'transform: rotate(180deg);') {
-        $('.number_3').find('.card__shapes').attr('style', 'transform: rotate(0deg);')
-    } else {
-        $('.number_3').find('.card__shapes').attr('style', 'transform: rotate(180deg);')
-    }
+    $('.card__shapes').removeClass('shape__active')
+    $('.number_3').find('.card__shapes').addClass('shape__active')
+
+
     $('.header__card_line').attr('style', 'width: 0%');
     $('.number_3').find('.header__card_line').attr('style', 'width: 100%;')
 }
 
 function phoneActive() {
     slideWrapper.attr('style', 'transform: translateX(-300vw');
-    var currentCardRotate = $('.number_4').find('.card__shapes').attr('style')
 
-    if (currentCardRotate == 'transform: rotate(180deg);') {
-        $('.number_4').find('.card__shapes').attr('style', 'transform: rotate(0deg);')
-    } else {
-        $('.number_4').find('.card__shapes').attr('style', 'transform: rotate(180deg);')
-    }
+    $('.card__shapes').removeClass('shape__active')
+    $('.number_4').find('.card__shapes').addClass('shape__active')
+
+
     $('.header__card_line').attr('style', 'width: 0%');
     $('.number_4').find('.header__card_line').attr('style', 'width: 100%;')
 }
