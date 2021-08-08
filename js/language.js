@@ -1,7 +1,7 @@
 var lang = navigator.languages
 
 if (lang.indexOf('ru')) {
-    return false;
+    //
 } else {
     engLang()
 }
