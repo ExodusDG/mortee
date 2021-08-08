@@ -11,21 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="style/slick.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="style/slick-theme.css" />
-    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/slick.css" />
+    <link rel="stylesheet" type="text/css" href="style/slick-theme.css" />
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
     <!-- PRELOADER -->
-    <!--    <div class="preloader">
+    <div class="preloader">
         <div class="preloader__left"></div>
         <div class="preloader__right"></div>
         <div class="preloader__row">
             <div class="loader"></div>
         </div>
     </div>
-    -->
     <!-- MOBILE MENU -->
     <div class="mobile__menu">
         <div class="button-close">
@@ -235,60 +234,77 @@
                     <div class="about__text">
                         <p class="about__text_losung">мы - это будущее!</p>
                         <p class="about__text_title">IT - разработка</p>
-                        <p class="about__text_company">“Компания Mor&Tee вышла недавно, но уже имеет огромное количество положительных отзывов и множество выполненных проектов. Только тут, вы можете доверить создание своего проекта настоящим профессионалам, так как все программисты,
-                            работающие тут, имеют огромной опыт работы за плечами. Тут вы можете создать все, что имеет IT-сферу, от создания сайта до создания программного обеспечения под ваше техническое задание.”</p>
-                        <p class="about__text_author">- Иван Иванов</p>
-                        <p class="class about__text_role">CEO компании Mor&Tee</p>
-                        <div class="about__skils_block">
-                            <div class="skills__wrapper">
-                                <div class="skills_slide-1">
-                                    <div class="about__skills">
-                                        <div class="about__skils_text">
-                                            <p>WEB</p>
-                                            <p id="web__percent">90%</p>
-                                        </div>
-                                        <div class="about__skills_bg">
-                                            <div class="about__skills_line" id="web__line"></div>
-                                        </div>
-                                    </div>
-                                    <div class="about__skills">
-                                        <div class="about__skils_text">
-                                            <p>GAME</p>
-                                            <p id="game__percent">80%</p>
-                                        </div>
-                                        <div class="about__skills_bg">
-                                            <div class="about__skills_line" id="game__line"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skills_slide-1">
-                                    <div class="about__skills">
-                                        <div class="about__skils_text">
-                                            <p>ПО</p>
-                                            <p>75%</p>
-                                        </div>
-                                        <div class="about__skills_bg">
-                                            <div class="about__skills_line" style="width: 75%;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="about__skills">
-                                        <div class="about__skils_text">
-                                            <p>MOBILE</p>
-                                            <p>95%</p>
-                                        </div>
-                                        <div class="about__skills_bg">
-                                            <div class="about__skills_line" style="width: 95%;"></div>
+                        <div style="overflow-x: hidden;">
+                            <div class="about__slide_wrapper">
+                                <div class="about__slide_slide">
+                                    <p class="about__text_company">“Компания Mor&Tee вышла недавно, но уже имеет огромное количество положительных отзывов и множество выполненных проектов. Только тут, вы можете доверить создание своего проекта настоящим профессионалам, так как все
+                                        программисты, работающие тут, имеют огромной опыт работы за плечами. Тут вы можете создать все, что имеет IT-сферу, от создания сайта до создания программного обеспечения под ваше техническое задание.”</p>
+                                    <p class="about__text_author">- Николай Сицинский</p>
+                                    <p class="class about__text_role">Директор компании</p>
+                                    <div class="about__skils_block">
+                                        <div class="skills__wrapper">
+                                            <div class="skills_slide-1">
+                                                <div class="about__skills">
+                                                    <div class="about__skils_text">
+                                                        <p>WEB</p>
+                                                        <p id="web__percent">90%</p>
+                                                    </div>
+                                                    <div class="about__skills_bg">
+                                                        <div class="about__skills_line" id="web__line"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="about__skills">
+                                                    <div class="about__skils_text">
+                                                        <p>GAME</p>
+                                                        <p id="game__percent">80%</p>
+                                                    </div>
+                                                    <div class="about__skills_bg">
+                                                        <div class="about__skills_line" id="game__line"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="about__slide_slide">
+                                    <p class="about__text_company">“Компания Mor&Tee вышла недавно, но уже имеет огромное количество положительных отзывов и множество выполненных проектов. Только тут, вы можете доверить создание своего проекта настоящим профессионалам, так как все
+                                        программисты, работающие тут, имеют огромной опыт работы за плечами. Тут вы можете создать все, что имеет IT-сферу, от создания сайта до создания программного обеспечения под ваше техническое задание.”</p>
+                                    <p class="about__text_author">- Станислав Николин</p>
+                                    <p class="class about__text_role">Директор компании</p>
+                                    <div class="about__skils_block">
+                                        <div class="skills__wrapper">
+                                            <div class="skills_slide-1">
+                                                <div class="about__skills">
+                                                    <div class="about__skils_text">
+                                                        <p>ПО</p>
+                                                        <p>75%</p>
+                                                    </div>
+                                                    <div class="about__skills_bg">
+                                                        <div class="about__skills_line" style="width: 75%;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="about__skills">
+                                                    <div class="about__skils_text">
+                                                        <p>MOBILE</p>
+                                                        <p>95%</p>
+                                                    </div>
+                                                    <div class="about__skills_bg">
+                                                        <div class="about__skills_line" style="width: 95%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                            </div>
                         </div>
                         <div class="about__skils_nav">
                             <div class="about__skills_dot about__dot_active" id="slide-1-dot"></div>
                             <div class="about__skills_dot" id="slide-2-dot"></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -854,37 +870,36 @@
                 <p class="contact__subtitle">
                     Вы можете написать нам в любое время суток, мы постараемся как можно быстрее ответить
                 </p>
-                <a href="#">
+                <a href="https://discord.gg/ajXESR35xP">
                     <div class="contact__cards">
                         <div class="contact__card">
                             <i class="fab fa-discord"></i>
                             <p>discord</p>
                         </div>
                 </a>
-                <a href="#">
+                <a href="https://vk.com/teeno418253">
                     <div class="contact__card">
                         <i class="fab fa-vk"></i>
                         <p>vkontakte</p>
                     </div>
                 </a>
-                <a href="#">
-                    <div class="contact__card">
-                        <i class="fab fa-whatsapp"></i>
-                        <p>whatsapp</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="contact__card">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <p>email</p>
-                    </div>
-                </a>
-                <a href="#">
+                <div class="contact__card" id="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <p>whatsapp</p>
+                </div>
+
+
+                <div class="contact__card" id="email">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <p>email</p>
+                </div>
+
+                <!--  <a href="#">
                     <div class="contact__card">
                         <i class="fas fa-mobile-alt"></i>
                         <p>phone</p>
                     </div>
-                </a>
+                </a> -->
                 </div>
             </div>
         </div>
@@ -911,11 +926,11 @@
                     </div>
                     <div class="footer__body-icons">
                         <div class="footer__icons">
-                            <a href=""><i class="fab fa-discord"></i></a>
-                            <a href=""><i class="fab fa-vk"></i></a>
-                            <a href=""><i class="fab fa-whatsapp"></i></a>
-                            <a href=""><i class="fas fa-envelope-open-text"></i></a>
-                            <a href=""><i class="fas fa-mobile-alt"></i></a>
+                            <a href="https://discord.gg/ajXESR35xP"><i class="fab fa-discord"></i></a>
+                            <a href="https://vk.com/teeno418253"><i class="fab fa-vk"></i></a>
+                            <a href="#contacts"><i class="fab fa-whatsapp"></i></a>
+                            <a id="#contacts" value="morteemain@gmail.com"><i class="fas fa-envelope-open-text"></i></a>
+                            <!-- <a href=""><i class="fas fa-mobile-alt"></i></a> -->
                         </div>
                         <p>2021, mor&tee - Все права защищены</p>
                     </div>
@@ -986,26 +1001,6 @@
     </div>
 
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script>
-        /* PRELOADER */
-
-        setTimeout(preLoader, 1500);
-
-        function preLoader() {
-            setTimeout(loadingHide(), 1000);
-
-            function loadingHide() {
-                $('.loader').css('display', 'none')
-            }
-            $('.preloader__left').addClass('preloader__left_hidden');
-            $('.preloader__right').addClass('preloader__right_hidden');
-
-            window.setTimeout(function() {
-                document.body.classList.add('loaded');
-                document.body.classList.remove('loaded_hiding');
-            }, 1000);
-        }
-    </script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
 
