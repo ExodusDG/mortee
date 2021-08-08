@@ -11,12 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style/slick.css" />
-    <link rel="stylesheet" type="text/css" href="style/slick-theme.css" />
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="style/slick.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" type="text/css" href="style/slick-theme.css" />
+    <link rel="preload" as="style" onload="this.rel='stylesheet'" href="style/style.css">
 </head>
 
 <body>
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="preloader__left"></div>
+        <div class="preloader__right"></div>
+        <div class="preloader__row">
+            <div class="loader"></div>
+        </div>
+    </div>
     <!-- MOBILE MENU -->
     <div class="mobile__menu">
         <div class="button-close">
@@ -146,7 +154,7 @@
                             <p class="header__card_desc">разработка</p>
                         </div>
                         <div class="header__card_icon">
-                            <img class="card__shapes" src="images/card__shapes.svg" alt="">
+                            <img class="card__shapes shape__active" src="images/card__shapes.svg" alt="">
                             <img class="card__icon" src="images/icons/language.svg" alt="Icon">
                         </div>
                         <div class="card__mask"></div>
@@ -220,11 +228,14 @@
                     </div>
                 </div>
                 <div class="about__content">
-                    <div class="about__image"></div>
+                    <div class="about__image">
+                        <img src="images/mortee.png" alt="">
+                    </div>
                     <div class="about__text">
                         <p class="about__text_losung">мы - это будущее!</p>
                         <p class="about__text_title">IT - разработка</p>
-                        <p class="about__text_company">“Компания Mor&Tee зарекомендовала себя как опытный ИТ-интегратор, надежный партнер и поставщик. Быть лучше, чем вчера и развивать бизнес наших заказчиков — таков наш подход к работе.”</p>
+                        <p class="about__text_company">“Компания Mor&Tee вышла недавно, но уже имеет огромное количество положительных отзывов и множество выполненных проектов. Только тут, вы можете доверить создание своего проекта настоящим профессионалам, так как все программисты,
+                            работающие тут, имеют огромной опыт работы за плечами. Тут вы можете создать все, что имеет IT-сферу, от создания сайта до создания программного обеспечения под ваше техническое задание.”</p>
                         <p class="about__text_author">- Иван Иванов</p>
                         <p class="class about__text_role">CEO компании Mor&Tee</p>
                         <div class="about__skils_block">
@@ -792,7 +803,7 @@
                                 <img src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p>Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p>Заказы выполняются в чётко указанное время, в зависимости от технического задания, и договаривается всё до приёма заказа.</p>
                             </div>
                         </div>
                         <div class="faq__body_item">
@@ -801,7 +812,7 @@
                                 <img class="faq_icon_rotate_inactive" src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p>Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p>Всё что является правилами проекта, условностями выполнения задачи с какими-то погрешностями, и всё возможное описано в разделе "Гарантии"</p>
                             </div>
                         </div>
                         <div class="faq__body_item">
@@ -810,16 +821,18 @@
                                 <img class="faq_icon_rotate_inactive" src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p>Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p>Приём денег осуществляется в множествах вариантов. В зависимости от валюты, и страны отправки, наши менеджеры на этапе приёма заказа индивидуально к этому подойдут, и оплатить заказ вы сможете почти во всех случаях.</p>
                             </div>
                         </div>
                         <div class="faq__body_item">
                             <div class="faq__body_answer">
-                                <p>Что будет, если качество мне не понравится?</p>
+                                <p>Что будет, если качество выполненной работы не понравится?</p>
                                 <img class="faq_icon_rotate_inactive" src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p>Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p>Данная работа будет доводится правками до полного сочетания с техническим заданием. В случае если вы внесли определённое тех. задание и в ходе работы оно уже перестало вам нравится, а наши сотрудники уже работают над ним,
+                                    изменения будут вносится по мере возможности и готовности.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -949,7 +962,7 @@
                     <span class="nav__block_number">06</span>
                 </li>
             </a>
-            <a href="#contact">
+            <a href="#contacts">
                 <li class="nav__block-item" id="nav-contacts">
                     <hr class="nav__block_line">
                     <span class="nav__block_number">07</span>
@@ -957,10 +970,24 @@
             </a>
         </ul>
     </div>
+    <div class="scroll_up">
+        <a href="#home">
+            <div class="up_button">
+                <svg width="100px" height="100px" viewBox="0 0 200 200">
+          <circle class="trail" cx="100" cy="100" r="50" fill="none" stroke="transparent" stroke-width="10"/>
+          <circle class="progress" cx="100" cy="100" r="50" fill="none" stroke="#9F16F8" stroke-width="10"/>
+        </svg>
+                <div class="up__button">
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+            </div>
+        </a>
+    </div>
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

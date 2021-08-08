@@ -142,6 +142,154 @@ a {
 }
 
 
+/* PRELOADER */
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #9F16F8;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 1001;
+    transform: translate3d(0, 0, 0);
+    transition: 0.5s;
+}
+
+.preloader__left {
+    width: 51%;
+    position: fixed;
+    left: 0;
+    height: 2000px;
+    background: #1E004B;
+    transition: 0.6s;
+    transform: translate3d(0%, 0, 0);
+}
+
+.preloader__left_hidden {
+    transform: translate3d(-100%, 0, 0);
+}
+
+.preloader__right {
+    width: 51%;
+    right: 0;
+    position: fixed;
+    height: 2000px;
+    background: #1E004B;
+    transition: 0.6s;
+    transform: translate3d(0%, 0, 0);
+}
+
+.preloader__right_hidden {
+    transform: translate3d(100%, 0, 0);
+}
+
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes preloader-bounce {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
+
+
+/* SCROLL - BAR & UP BUTTON */
+
+.up__button {
+    background: #3D4962;
+    width: 50px;
+    height: 50px;
+    bottom: 29px;
+    left: 25px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 0.4s;
+    color: white;
+    position: absolute;
+    padding-top: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.up__button:hover {
+    color: white;
+    background: #9F16F8;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
+}
+
+svg .progress {
+    stroke-dasharray: 339.292 339.292;
+    stroke-dashoffset: 339.292;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s linear;
+    animation: dash 0.5s linear forwards;
+    z-index: 1000;
+}
+
+.scroll_up {
+    transform: translateX(200px);
+    transition: 0.4s;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 1000;
+}
+
+.scroll_up_visible {
+    transform: translateX(0px);
+}
+
+
 /* HEADER */
 
 .mobile__menu {
@@ -260,10 +408,6 @@ body {
     width: 200px;
 }
 
-.logotype__block:hover .logotype_shape {
-    transform: rotate3d(1, 1, 1, 360deg);
-}
-
 .header__body {
     position: absolute;
     z-index: 3;
@@ -295,6 +439,29 @@ body {
     height: 265px;
     position: absolute;
     border-radius: 25px;
+}
+
+.shape__active {
+    animation: 1s linear 0s normal none infinite running rot;
+    -webkit-animation: 1s linear 0s normal none infinite running rot;
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .header__card_icon {
@@ -507,37 +674,8 @@ body {
     display: flex;
 }
 
-.about__image {
-    background-image: url(../images/about-photo.jpg);
-    position: relative;
-    width: 35%;
-    height: 500px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: cover;
-    -webkit-animation: morph 8s ease-in-out 1s infinite;
-    animation: morph 8s ease-in-out 1s infinite;
-    background-blend-mode: multiply;
-    box-shadow: inset 0 0 0 5px #9f16f8;
-    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-    border-color: #9F16F8;
-    overflow: hidden;
-}
-
-@keyframes morph {
-    0% {
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%
-    }
-    50% {
-        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%
-    }
-    100% {
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%
-    }
+.about__image img {
+    width: 400px;
 }
 
 .about__content {
