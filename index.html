@@ -18,13 +18,14 @@
 
 <body>
     <!-- PRELOADER -->
-    <div class="preloader">
+    <!--    <div class="preloader">
         <div class="preloader__left"></div>
         <div class="preloader__right"></div>
         <div class="preloader__row">
             <div class="loader"></div>
         </div>
     </div>
+    -->
     <!-- MOBILE MENU -->
     <div class="mobile__menu">
         <div class="button-close">
@@ -985,6 +986,26 @@
     </div>
 
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        /* PRELOADER */
+
+        setTimeout(preLoader, 1500);
+
+        function preLoader() {
+            setTimeout(loadingHide(), 1000);
+
+            function loadingHide() {
+                $('.loader').css('display', 'none')
+            }
+            $('.preloader__left').addClass('preloader__left_hidden');
+            $('.preloader__right').addClass('preloader__right_hidden');
+
+            window.setTimeout(function() {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 1000);
+        }
+    </script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
 

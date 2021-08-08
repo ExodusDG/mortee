@@ -1,24 +1,5 @@
 var bodyWidth = $('body').width();
 
-/* PRELOADER */
-
-setTimeout(preLoader, 1500);
-
-function preLoader() {
-    setTimeout(loadingHide(), 1000);
-
-    function loadingHide() {
-        $('.loader').css('display', 'none')
-    }
-    $('.preloader__left').addClass('preloader__left_hidden');
-    $('.preloader__right').addClass('preloader__right_hidden');
-
-    window.setTimeout(function() {
-        document.body.classList.add('loaded');
-        document.body.classList.remove('loaded_hiding');
-    }, 1000);
-}
-
 /* TOP BUTTON */
 
 var progressValue = document.querySelector('.progress');
