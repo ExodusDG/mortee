@@ -1,27 +1,21 @@
-function browserLocale() {
-    var lang
+if ($.cookie('lang') == 'ru') {
+    ruLang()
 
-    if (navigator.languages && navigator.languages.length) {
-        // latest versions of Chrome and Firefox set this correctly
-        lang = navigator.languages[0]
-    } else if (navigator.userLanguage) {
-        // IE only
-        lang = navigator.userLanguage
-    } else {
-        // latest versions of Chrome, Firefox, and Safari set this correctly
-        lang = navigator.language
-    }
+} else if ($.cookie('lang') == 'en') {
 
-    return lang
-}
-
-if (browserLocale().indexOf('ru') == -1) {
-    alert('1')
-} else {
     engLang()
 }
 
+function ruLang() {
+    $('.lang__change_text').text('EN')
+    $('.lang__change_text').removeClass('ru_lang')
+    $('.lang__change_text').addClass('en_lang')
+}
+
 function engLang() {
+    $('.lang__change_text').text('RU')
+    $('.lang__change_text').removeClass('en_lang')
+    $('.lang__change_text').addClass('ru_lang')
 
     $.getJSON('js/eng.json', function(data) {
         var items = [];
@@ -117,9 +111,40 @@ function engLang() {
         $('.answer_4_desc').text(engText.answer_4_desc)
         $('.answer_5_title').text(engText.answer_5_title)
         $('.answer_5_desc').text(engText.answer_5_desc)
+        $('.answer_6_title').text(engText.answer_6_title)
+        $('.answer_6_desc').text(engText.answer_6_desc)
+        $('.answer_7_title').text(engText.answer_7_title)
+        $('.answer_7_desc').text(engText.answer_7_desc)
+        $('.answer_8_title').text(engText.answer_8_title)
+        $('.answer_8_desc').text(engText.answer_8_desc)
+        $('.answer_9_title').text(engText.answer_9_title)
+        $('.answer_9_desc').text(engText.answer_9_desc)
+        $('.answer_10_title').text(engText.answer_10_title)
+        $('.answer_10_desc').text(engText.answer_10_desc)
+        $('.answer_11_title').text(engText.answer_11_title)
+        $('.answer_11_desc').text(engText.answer_11_desc)
+        $('.answer_12_title').text(engText.answer_12_title)
+        $('.answer_12_desc').text(engText.answer_12_desc)
+        $('.answer_13_title').text(engText.answer_13_title)
+        $('.answer_13_desc').text(engText.answer_13_desc)
+        $('.answer_14_title').text(engText.answer_14_title)
+        $('.answer_14_desc').text(engText.answer_14_desc)
+
         $('.faq_answer_not_found').text(engText.faq_answer_not_found)
         $('.faq__answer_not_found a').text('Write to us!')
         $('.contact__subtitle').text(engText.contact__subtitle)
         $('.footer_coryping').text(engText.footer_coryping)
     });
 }
+
+$('.en_lang').click(function() {
+    $.cookie('lang', 'en');
+    location.reload()
+    engLang()
+
+})
+$('.ru_lang').click(function() {
+    $.cookie('lang', 'ru');
+    ruLang()
+    location.reload()
+})

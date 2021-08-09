@@ -1,6 +1,98 @@
-$(document).ready(function() {
+var bodyWidth = $('body').width();
 
-    var bodyWidth = $('body').width();
+$('#design-yes').click(function() {
+    $('#design-no').removeClass('ticket__choise-selected')
+    $(this).addClass('ticket__choise-selected');
+    $('#ticketDesign').attr('value', 'Да')
+})
+$('#design-no').click(function() {
+    $('#design-yes').removeClass('ticket__choise-selected')
+    $(this).addClass('ticket__choise-selected');
+    $('#ticketDesign').attr('value', 'Нет')
+})
+
+$('#anim-yes').click(function() {
+    $('#anim-no').removeClass('ticket__choise-selected')
+    $(this).addClass('ticket__choise-selected');
+    $('#ticketAnim').attr('value', 'Да')
+})
+$('#anim-no').click(function() {
+    $('#anim-yes').removeClass('ticket__choise-selected')
+    $(this).addClass('ticket__choise-selected');
+    $('#ticketAnim').attr('value', 'Нет')
+})
+
+$('#support-yes').click(function() {
+    $('#support-no').removeClass('ticket__choise-selected')
+    $(this).addClass('ticket__choise-selected');
+    $('#ticketSupport').attr('value', 'Да')
+})
+$('#support-no').click(function() {
+    $('#support-yes').removeClass('ticket__choise-selected')
+    $(this).addClass('ticket__choise-selected');
+    $('#ticketSupport').attr('value', 'Нет')
+})
+
+$(document).ready(function() {
+    /* EMAIL */
+    (function() {
+        emailjs.init("user_ZAKIA9SbQjTWEzT5txiYE");
+    })();
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var selectedValute = $(".ticket__desc_select option:selected").text()
+            var templateParams = {
+                category: $('#category-prev').text(),
+                company: $('.company').val(),
+                field: $('.field-name').val(),
+                budget: $('.money-name').val() + selectedValute,
+                designAnswer: $('#ticketDesign').attr('value'),
+                animAnswer: $('#ticketAnim').attr('value'),
+                supportAnswer: $('#ticketSupport').attr('value'),
+                customerName: $('.customer-name').val(),
+                customerSurname: $('.customer-surrname').val(),
+                email: $('.ticket__email_input').val(),
+                number: $('.ticket-link-input').val(),
+                message: $('.ticket__block-text').val()
+            };
+            this.contact_number.value = Math.random() * 100000 | 0;
+            emailjs.send('service_v22b6dx', 'template_8uobr9m', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+
+                    $('.notify > img').attr('src', 'images/icons/done.svg');
+                    $('.notify_text').text('Отправлено! Мы получили вашу заявку.');
+                    $('.notify').css('left', '2%');
+                    setTimeout(() => {
+                        $('.notify').css('left', '-50%');
+
+                        if (bodyWidth < 600) {
+                            $('.notify').css('left', '-170%');
+                        }
+
+                    }, 3000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+
+                    $('.notify > img').attr('src', 'images/icons/error.svg');
+                    $('.notify_text').text('Ошибка! Заявка не отправлена.');
+                    $('.notify').css('left', '2%');
+                    setTimeout(() => {
+                        $('.notify').css('left', '-50%');
+
+                        if (bodyWidth < 600) {
+                            $('.notify').css('left', '-70%');
+                        }
+
+                    }, 3000);
+                });
+        });
+    }
+
+
+
+
 
     $('#whatsapp').click(function() {
         $(this).find('p').text('+79899746856')
@@ -51,7 +143,7 @@ $(document).ready(function() {
         var elementTop = $(this).offset().top;
         var elementBottom = elementTop + $(this).outerHeight();
 
-        var viewportTop = $(window).scrollTop();
+        var viewportTop = $(window).scrollTop() + 100;
         var viewportBottom = viewportTop + $(window).height();
 
         return elementBottom > viewportTop && elementTop < viewportBottom;
