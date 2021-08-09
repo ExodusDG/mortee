@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mortee - ваш выбор в IT индустрии</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , maximum-scale=1>
+    <title>Mor&Tee IT Community</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
@@ -140,7 +140,7 @@
                 <div class="header__text header_text_mob">
                     <p class="header__text-subtitle">Лучшее решение</p>
                     <p class="header__text-title">ДЛЯ БИЗНЕСА</p>
-                    <button class="header__text-button">Подробнее</button>
+                    <a href="#services"><button class="header__text-button">Подробнее</button></a>
                 </div>
                 <div class="header__cards">
 
@@ -212,9 +212,12 @@
                 <div class="header__text header_text_desktop">
                     <p class="header__text-subtitle">Лучшее решение</p>
                     <p class="header__text-title">ДЛЯ БИЗНЕСА</p>
-                    <button class="header__text-button">Подробнее</button>
+                    <a href="#services"><button class="header__text-button">Подробнее</button></a>
                 </div>
             </div>
+        </div>
+        <div class="lang_change">
+            <span class="lang__change_text">EN</span>
         </div>
     </section>
     <!-- ABOUT -->
@@ -538,84 +541,89 @@
                     <div class="ticket__body_step-2">
                         <div class="ticket__desc">
                             <p class="ticket__body_step ticket__step_2_text">ШАГ 2. Опишите ваш проект</p>
-                            <div class="ticket__desc-1">
-                                <div class="ticket__desc_block">
-                                    <p style="margin-bottom: 30px;"><span class="ticket__category">Категория:</span> <span id="category"> Web - разработка</span></p>
-                                    <div class="ticket__desc_input">
-                                        <p class="company__name">Название компании</p>
-                                        <input type="text" name="company" id="#company-name">
-                                    </div>
-                                    <div class="ticket__desc_input">
-                                        <p class="work__name">Сфера деятельности</p>
-                                        <input type="text" name="field" id="#field-name">
-                                    </div>
-                                    <div class="ticket__desc_input">
-                                        <p class="budget__count">Бюджет</p>
-                                        <input type="text" name="money" id="#money-name">
-                                        <select class="ticket__desc_select">
-                                            <option value="dollars">$</option>
+                            <form id="contact-form">
+                                <div class="ticket__desc-1">
+                                    <div class="ticket__desc_block">
+                                        <input type="hidden" name="contact_number" name="to_name" id="to_name">
+                                        <input type="hidden" name="category" name="category" id="category">
+                                        <p style="margin-bottom: 30px;"><span class="ticket__category">Категория:</span> <span type="text" id="category-prev"> Web - разработка</span></p>
+                                        <div class="ticket__desc_input">
+                                            <p class="company__name">Название компании</p>
+                                            <input type="text" name="company" class="company">
+                                        </div>
+                                        <div class="ticket__desc_input">
+                                            <p class="work__name">Сфера деятельности</p>
+                                            <input type="text" name="field" class="field-name">
+                                        </div>
+                                        <div class="ticket__desc_input">
+                                            <p class="budget__count">Бюджет</p>
+                                            <input type="text" name="money" class="money-name">
+                                            <select class="ticket__desc_select">
+                                            <option selected value="dollars">$</option>
                                             <option value="euro">€</option>
                                             <option value="ruble">₽</option>
                                             <option value="hryvnya">₴</option>
                                         </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="ticket__desc_block">
-                                    <p style="margin-bottom: 30px;"><span id="changeTariff" style="color: #9F16F8; cursor: pointer;">Сменить</span></p>
-                                    <div class="ticket__desc_input">
-                                        <p class="answer__design">Есть логотип, дизайн?</p>
-                                        <div class="ticket__desc_choise">
-                                            <div class="ticket__choise" id="designCheck">
-                                                <i class="fas fa-check"></i>
+                                    <div class="ticket__desc_block">
+                                        <p style="margin-bottom: 30px;"><span id="changeTariff" style="color: #9F16F8; cursor: pointer;">Сменить</span></p>
+                                        <div class="ticket__desc_input">
+                                            <p class="answer__design">Есть логотип, дизайн?</p>
+                                            <div class="ticket__desc_choise" id="ticketDesign" value="-">
+                                                <div class="ticket__choise" id="design-yes">
+                                                    <i class="fas fa-check"></i>
+                                                </div>
+                                                <div class="ticket__choise" id="design-no">
+                                                    <i class="fas fa-times"></i>
+                                                </div>
                                             </div>
-                                            <div class="ticket__choise">
-                                                <i class="fas fa-times"></i>
+                                        </div>
+                                        <div class="ticket__desc_input" id="ticketAnim" value="-">
+                                            <p class="answer__anim">Нужна анимация?</p>
+                                            <div class="ticket__desc_choise">
+                                                <div class="ticket__choise" id="anim-yes">
+                                                    <i class="fas fa-check"></i>
+                                                </div>
+                                                <div class="ticket__choise" id="anim-no">
+                                                    <i class="fas fa-times"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__desc_input">
+                                            <p class="answer__support">Нужна поддержка?</p>
+                                            <div class="ticket__desc_choise" id="ticketSupport" value="-">
+                                                <div class="ticket__choise" id="support-yes">
+                                                    <i class="fas fa-check"></i>
+                                                </div>
+                                                <div class="ticket__choise" id="support-no">
+                                                    <i class="fas fa-times"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ticket__desc_input">
-                                        <p class="answer__anim">Нужна анимация?</p>
-                                        <div class="ticket__desc_choise">
-                                            <div class="ticket__choise">
-                                                <i class="fas fa-check"></i>
-                                            </div>
-                                            <div class="ticket__choise">
-                                                <i class="fas fa-times"></i>
-                                            </div>
+                                    <div class="ticket__desc_block" style="width: 40%;">
+                                        <div class="ticket__desc_input block_3_input">
+                                            <input type="text" class="customer-name" name="customer-name" class="customer-name" placeholder="Имя">
+                                            <input type="text" name="customer-surrname" class="customer-surrname" class="customer-surrname" placeholder="Фамилия">
                                         </div>
-                                    </div>
-                                    <div class="ticket__desc_input">
-                                        <p class="answer__support">Нужна поддержка?</p>
-                                        <div class="ticket__desc_choise">
-                                            <div class="ticket__choise">
-                                                <i class="fas fa-check"></i>
-                                            </div>
-                                            <div class="ticket__choise">
-                                                <i class="fas fa-times"></i>
-                                            </div>
+                                        <div class="ticket__desc_input">
+                                            <input class="ticket__email_input" type="email" name="email-send" class="email-send" placeholder="Электронная почта">
                                         </div>
+                                        <div class="ticket__block_contact">
+                                            <i class="fab fa-discord"></i>
+                                            <i class="fab fa-vk"></i>
+                                            <i class="fab fa-whatsapp"></i>
+                                            <i class="fas fa-envelope-open-text"></i>
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <input class="ticket-link-input" type="text" name="link-number" class="link-number" placeholder="Ссылка / номер">
+                                        </div>
+                                        <textarea style="padding-top: 10px;" class="ticket__block-text" name="tech-info" id="tech-info" placeholder="Техническое задание"></textarea>
                                     </div>
                                 </div>
-                                <div class="ticket__desc_block" style="width: 40%;">
-                                    <div class="ticket__desc_input block_3_input">
-                                        <input type="text" class="customer-name" name="name" id="#customer-name" placeholder="Имя">
-                                        <input type="text" name="surrname" class="customer-surrname" id="#customer-surrname" placeholder="Фамилия">
-                                    </div>
-                                    <div class="ticket__desc_input">
-                                        <input class="ticket__email_input" type="text" name="field" id="#email" placeholder="Электронная почта">
-                                    </div>
-                                    <div class="ticket__block_contact">
-                                        <i class="fab fa-discord"></i>
-                                        <i class="fab fa-vk"></i>
-                                        <i class="fab fa-whatsapp"></i>
-                                        <i class="fas fa-envelope-open-text"></i>
-                                        <i class="fas fa-mobile-alt"></i>
-                                        <input class="ticket-link-input" type="text" name="" id="#link" placeholder="Ссылка / номер">
-                                    </div>
-                                    <textarea style="padding-top: 10px;" class="ticket__block-text" id="tech-info" placeholder="Техническое задание"></textarea>
-                                </div>
-                            </div>
-                            <button class="ticket-send-button">Отправить заявку</button>
+
+                                <button class="ticket-send-button" type="submit">Отправить заявку</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -776,38 +784,57 @@
                     <div class="faq__body_list">
                         <div class="faq__body_item">
                             <div class="faq__body_answer">
-                                <p class="answer_1_title">При каких условиях мы возвращаем деньги?</p>
+                                <p class="answer_8_title">Чем мы предоставляем свою репутацию, и доверие ? </p>
                                 <img src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p class="answer_1_desc">Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p class="answer_8_desc">Мы имеем десятки отзывов от довольных заказчиков, также имеем опыт работы в сфере айти разработок, можем предоставить информативное резюме каждого из наших специалистов, с учётом их умений. </p>
                             </div>
                         </div>
                         <div class="faq__body_item">
                             <div class="faq__body_answer">
-                                <p class="answer_1_title">При каких условиях мы возвращаем деньги?</p>
+                                <p class="answer_10_title">Что является гарантом нашей сделки ?</p>
                                 <img src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p class="answer_1_desc">Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p class="answer_10_desc">Абсолютно всё являет себя гарантом, поскольку наша компания имеет уже довольно таки высокую репутацию хоть и не в обширных кругах, но мы стремимся предоставить каждому клиенту лучшее выполнение его заказа, а также общение
+                                    в самом опрятном визуальном воплощение.</p>
                             </div>
                         </div>
                         <div class="faq__body_item">
                             <div class="faq__body_answer">
-                                <p class="answer_1_title">При каких условиях мы возвращаем деньги?</p>
+                                <p class="answer_11_title">Какие правила мы соблюдаем ? </p>
                                 <img src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p class="answer_1_desc">Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p class="answer_11_desc">Всё что описано в FAQ соблюдается в точности до слова. Также ми подлежим всем шаблонам заказчик = клиент.</p>
                             </div>
                         </div>
                         <div class="faq__body_item">
                             <div class="faq__body_answer">
-                                <p class="answer_1_title">При каких условиях мы возвращаем деньги?</p>
+                                <p class="answer_12_title">Что будет если я откажусь от выполнения заказа?</p>
                                 <img src="images/icons/right.svg" alt="">
                             </div>
                             <div class="faq_body_desc">
-                                <p class="answer_1_desc">Вам будут возвращены деньги если нами не была сделана работа вовремя, если после получения оплаты мы по какой - то причине отказались от выполнения, и т.д</p>
+                                <p class="answer_12_desc">Если отказ поступит в ходе начала выполнения, в таком случае мы взыскаем 5% от суммы оплаты. В случае если заказ был отменён на каком либо из этапов разработки, будет взыскаемо более 30% от оплаты сделки.</p>
+                            </div>
+                        </div>
+                        <div class="faq__body_item">
+                            <div class="faq__body_answer">
+                                <p class="answer_13_title">На чём положена гарантия вашего качества работы?</p>
+                                <img src="images/icons/right.svg" alt="">
+                            </div>
+                            <div class="faq_body_desc">
+                                <p class="answer_13_desc">В первую очередь это десятки отзывов, а также примеры выполненных работ. Также ко всему у нас работают отборные специалисты, поскольку в нашу команду попасть невероятно сложно.</p>
+                            </div>
+                        </div>
+                        <div class="faq__body_item">
+                            <div class="faq__body_answer">
+                                <p class="answer_14_title">В каком случае мы производим 100% манибэк ? </p>
+                                <img src="images/icons/right.svg" alt="">
+                            </div>
+                            <div class="faq_body_desc">
+                                <p class="answer_14_desc">Только в исключительных случаях, связанных с недочётом или ошибкой с нашей стороны. Всё остальное предусматривает взыскание разной процентной ставки от сделки.</p>
                             </div>
                         </div>
                     </div>
@@ -848,6 +875,35 @@
                             <div class="faq_body_desc">
                                 <p class="answer_5_desc">Данная работа будет доводится правками до полного сочетания с техническим заданием. В случае если вы внесли определённое тех. задание и в ходе работы оно уже перестало вам нравится, а наши сотрудники уже работают над ним,
                                     изменения будут вносится по мере возможности и готовности.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq__body_item">
+                            <div class="faq__body_answer">
+                                <p class="answer_6_title">В каком случае мы можем расторгнуть сделку ?</p>
+                                <img class="faq_icon_rotate_inactive" src="images/icons/right.svg" alt="">
+                            </div>
+                            <div class="faq_body_desc">
+                                <p class="answer_6_desc">Если со стороны клиента будут излишки неадекватности, агрессии, будет отказ + манибэк, но с учётом выполненной работы на тот момент, 10-15% уходят в не возврат.</p>
+                            </div>
+                        </div>
+                        <div class="faq__body_item">
+                            <div class="faq__body_answer">
+                                <p class="answer_7_title">Как проходит сделка ? </p>
+                                <img class="faq_icon_rotate_inactive" src="images/icons/right.svg" alt="">
+                            </div>
+                            <div class="faq_body_desc">
+                                <p class="answer_7_desc">Приём технического задания, учёт всех условностей, заключение сделки, плата. После оплаты в тот же день ваш заказ переходит в руки к специалистам, и работа над ним начинается.</p>
+                            </div>
+                        </div>
+                        <div class="faq__body_item">
+                            <div class="faq__body_answer">
+                                <p class="answer_8_title">Как с нами поддерживать связь ? </p>
+                                <img class="faq_icon_rotate_inactive" src="images/icons/right.svg" alt="">
+                            </div>
+                            <div class="faq_body_desc">
+                                <p class="answer_8_desc">У нас есть контактная связь через телеграмм, а также по почте, если нужно общение до начала работы с нами, создайте заявку на создание проекта на сайте, в поле доп.инфо напишите коротко свои вопросы, наши менеджеры сами
+                                    отпишут вам, на контакты которые вы укажите в заполнении заявки.
                                 </p>
                             </div>
                         </div>
@@ -893,12 +949,12 @@
                     <p>email</p>
                 </div>
 
-                <!--  <a href="#">
+                <a href="#">
                     <div class="contact__card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <p>phone</p>
+                        <i class="fab fa-telegram-plane"></i>
+                        <p>telegram</p>
                     </div>
-                </a> -->
+                </a>
                 </div>
             </div>
         </div>
@@ -998,12 +1054,17 @@
             </div>
         </a>
     </div>
-
+    <!-- NOTIFY -->
+    <div class="notify">
+        <img src="images/icons/done.svg" alt="sendStatus">
+        <p class="notify_text">Отправлено! Мы получили вашу заявку.</p>
+    </div>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/language.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 
 </html>

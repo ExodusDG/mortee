@@ -306,6 +306,7 @@ body {
 
 .header {
     height: 100vh;
+    position: relative;
 }
 
 .header__slider_image {
@@ -442,8 +443,8 @@ body {
 }
 
 .shape__active {
-    animation: 1s linear 0s normal none infinite running rot;
-    -webkit-animation: 1s linear 0s normal none infinite running rot;
+    animation: 2s linear 0s normal none infinite running rot;
+    -webkit-animation: 2s linear 0s normal none infinite running rot;
 }
 
 @keyframes rot {
@@ -1101,6 +1102,26 @@ body {
     color: white;
 }
 
+.notify {
+    position: fixed;
+    padding: 15px 30px;
+    background: #9F16F8;
+    border-radius: 20px;
+    color: white;
+    left: -50vw;
+    bottom: 3vh;
+    display: flex;
+    z-index: 9999;
+    align-items: center;
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(1, 0.01, 0.31, 0.98);
+}
+
+.notify img {
+    margin-right: 20px;
+    width: 40px;
+}
+
 .ticket__choise-selected {
     background: #9F16F8 !important;
     color: white !important;
@@ -1163,6 +1184,7 @@ body {
     color: white;
     outline: none;
     font-weight: 400;
+    line-height: 25px;
     font-family: 'Comfortaa', cursive;
     padding-left: 10px;
     box-sizing: border-box;
@@ -1352,6 +1374,7 @@ body {
     font-weight: 600;
     color: white;
     display: flex;
+    line-height: 30px;
     justify-content: space-between;
 }
 
@@ -1477,8 +1500,18 @@ body {
     text-align: center;
 }
 
+.lang_change {
+    position: absolute;
+    z-index: 500;
+    left: 20px;
+    bottom: 20px;
+    color: #9F16F8;
+    cursor: pointer;
+    font-weight: 700;
+}
+
 .contact__cards {
-    width: 55%;
+    width: 65%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -2027,6 +2060,20 @@ footer {
         width: 90%;
         margin-top: 100px;
     }
+    .notify {
+        position: fixed;
+        padding: 15px 30px;
+        background: #9F16F8;
+        border-radius: 20px;
+        color: white;
+        bottom: 150px;
+        width: 80vw;
+        left: -150%;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+        transition-timing-function: cubic-bezier(1, 0.01, 0.31, 0.98);
+    }
     .header__card_img {
         border-radius: 25px;
         z-index: 3;
@@ -2329,6 +2376,10 @@ footer {
     }
     .about__image img {
         width: 300px;
+    }
+    .footer__body-icons {
+        position: relative;
+        top: 30px;
     }
 }
 
